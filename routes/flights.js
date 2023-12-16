@@ -2,12 +2,14 @@ const express = require('express');
 
 const router = express.Router();
 
-const moviesCtrl = require('../controllers/flights')
+const flightCtrl = require('../controllers/flights')
 
-router.get('/', moviesCtrl.index)
+router.get('/', flightCtrl.index)
 
-router.get('/new', moviesCtrl.new)
+router.get('/new', flightCtrl.new)
 
-router.post('/', moviesCtrl.create);
+router.get('/:id', flightCtrl.show)
+
+router.post('/', flightCtrl.create);
 
 module.exports = router;
