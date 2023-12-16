@@ -8,6 +8,6 @@ router.get('/', moviesCtrl.index)
 
 router.get('/new', moviesCtrl.new)
 
-
+router.post('/', moviesCtrl.create);
 
 module.exports = router;

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+    <h1><%= title %></h1>
+
+    <form action="/flights" method="POST">
+        <label for="Airline"><br>
+            <input type="text" name="airline" value="Airline">
+        <button type="submit">Save Airline</button>   
+        </label><br>
+
+        <label for="Airport"><br>
+            <input type="text" name="airport" value="Airport">
+        <button type="submit">Save Airport</button>   
+        </label><br>
+
+        <label for="Flight Number"><br>
+            <input type="text" name="flightNo" value="Flight Number">
+        <button type="submit">Save Flight Number</button>   
+        </label><br>
+
+        <label for="Departure"><br>
+            <input type="text" name="departure" value="Departure">
+        <button type="submit">Save Departure</button>   
+        </label><br>
+
+    </form>
+
+</body>
+</html>
