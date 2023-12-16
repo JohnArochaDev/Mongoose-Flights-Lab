@@ -8,20 +8,12 @@ const destinationSchema  = new Schema({
 
 })
 
-const ticketSchema = newSchema({
-    seat: String,
-    price: Number,
-    flight: ObjectId,
-
-})
-
 const flightSchema = new Schema({
     airline: String,
     airport: String,
     flightNo: Number,
     departs: Date,
     destinations: [destinationSchema],
-    ticket: [ticketSchema]
 })
 
 
