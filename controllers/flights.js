@@ -26,5 +26,5 @@ function newFlight(req, res) {
 
 async function create(req, res) {
     await Flight.create(req.body)
-    res.redirect('/')
+    res.redirect('/flights')
 };

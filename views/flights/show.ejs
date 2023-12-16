@@ -19,7 +19,7 @@
     </tbody>
 </table>
 <form action="/flights/<%= flight.id %>/destinations" method="POST">
-    <label for="destinations"><br>
+    <label for="airport"><br>
         <select name="airport">
             <option value="LAX">LAX</option>
             <option value="LIH">LIH</option>
@@ -27,14 +27,19 @@
             <option value="DEN">DEN</option>
         </select>
     </label><br>
-    <label for="arivals"><br>
-        <select name="arivals">
-            <option value="LAX">LAX</option>
-            <option value="LIH">LIH</option>
-            <option value="IAH">IAH</option>
-            <option value="DEN">DEN</option>
-        </select>
+    <label for="arrival"><br>  
+        <input type="datetime-local" name="arrival">
     </label><br>
+    <br>
+    <button type="submit" id="">Save</button>  
 </form>
+<tbody>
+    <% flight.destinations.forEach(function(f) { %>
+    <tr>
+        <td><%= f.airport %></td>
+        <td><%= f.arrival %></td>
+    </tr>
+<% }) %>
+</tbody>
 
 <%- include('../partials/footer') %>
