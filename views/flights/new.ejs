@@ -1,34 +1,35 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-<body>
+<%- include('../partials/header') %>
     <h1><%= title %></h1>
 
     <form action="/flights" method="POST">
-        <label for="Airline"><br>
-            <input type="text" name="airline" value="Airline">
-        <button type="submit">Save Airline</button>   
+        <label for="Airlines"><br>
+            <select name="airline">
+                <option value="United">United</option>
+                <option value="Spirit">Spirit</option>
+                <option value="Delta">Delta</option>
+                <option value="American">American</option>
+            </select>
         </label><br>
 
         <label for="Airport"><br>
-            <input type="text" name="airport" value="Airport">
-        <button type="submit">Save Airport</button>   
+            <select name="airport">
+                <option value="LAX">LAX</option>
+                <option value="LIH">LIH</option>
+                <option value="IAH">IAH</option>
+                <option value="DEN">DEN</option>
+            </select>
         </label><br>
 
         <label for="Flight Number"><br>
-            <input type="text" name="flightNo" value="Flight Number">
-        <button type="submit">Save Flight Number</button>   
+            <input type="number" name="flightNo">
         </label><br>
 
-        <label for="Departure"><br>
-            <input type="text" name="departure" value="Departure">
-        <button type="submit">Save Departure</button>   
+        <label for="Departure"><br>  
+            <input type="datetime-local" name="departs" value="Departure">
         </label><br>
+        <br>
+        <button type="submit">Save</button>  
 
     </form>
 
-</body>
-</html>
+<%- include('../partials/footer') %>
