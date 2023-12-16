@@ -10,7 +10,6 @@
         </tr>
     </thead>
     <tbody>
-        <!-- Write the line of EJS to iterate over movies using forEach -->
         <tr>
             <td><%= flight.airline %></td>
             <td><%= flight.airport %></td>
@@ -19,5 +18,23 @@
         </tr>
     </tbody>
 </table>
+<form action="/flights/<%= flight.id %>/destinations" method="POST">
+    <label for="destinations"><br>
+        <select name="airport">
+            <option value="LAX">LAX</option>
+            <option value="LIH">LIH</option>
+            <option value="IAH">IAH</option>
+            <option value="DEN">DEN</option>
+        </select>
+    </label><br>
+    <label for="arivals"><br>
+        <select name="arivals">
+            <option value="LAX">LAX</option>
+            <option value="LIH">LIH</option>
+            <option value="IAH">IAH</option>
+            <option value="DEN">DEN</option>
+        </select>
+    </label><br>
+</form>
 
 <%- include('../partials/footer') %>
