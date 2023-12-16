@@ -5,7 +5,6 @@ const Schema = mongoose.Schema
 const destinationSchema  = new Schema({
     airport: String,
     arrival: Date,
-
 })
 
 const flightSchema = new Schema({
@@ -14,8 +13,11 @@ const flightSchema = new Schema({
     flightNo: Number,
     departs: Date,
     destinations: [destinationSchema],
+    seat: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Ticket',
+    }]
 })
 
 
 module.exports = mongoose.model('Flight', flightSchema)
-
