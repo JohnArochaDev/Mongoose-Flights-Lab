@@ -12,8 +12,9 @@ async function show(req, res) {
 }
 
 async function create(req, res) {
+    const ticket = await Tickets.findById(req.params.id)
     const flight = await Flight.findById(req.params.id)
-    flight.seat.push(req.body)
-    await flight.save()
-    res.redirect(`/flights/${flight._id}/tickets/new`)
+    // ticket.push(req.body)
+    // await ticket.save()
+    res.redirect(`/flights/${flight._id}/tickets/new`, { ticket, flight })
 };
