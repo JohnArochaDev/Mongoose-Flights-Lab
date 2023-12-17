@@ -8,7 +8,7 @@ module.exports = {
 
 async function show(req, res) {
     const flight = await Flight.findById(req.params.id);
-    res.render(`/tickets/new`)
+    res.render(`flights/tickets/new`, { flight })
 }
 
 async function create(req, res) {
